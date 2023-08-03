@@ -1,0 +1,3 @@
+package com.spinoza.learningdecompose.presentation.feature.menu
+
+interface NestedMenuPage
