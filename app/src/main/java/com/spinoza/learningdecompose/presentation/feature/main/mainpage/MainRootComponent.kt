@@ -3,8 +3,8 @@ package com.spinoza.learningdecompose.presentation.feature.main.mainpage
 import com.arkivanov.decompose.ComponentContext
 import com.arkivanov.decompose.router.stack.ChildStack
 import com.arkivanov.decompose.router.stack.StackNavigation
+import com.arkivanov.decompose.router.stack.bringToFront
 import com.arkivanov.decompose.router.stack.childStack
-import com.arkivanov.decompose.router.stack.push
 import com.arkivanov.decompose.value.Value
 import com.arkivanov.essenty.parcelable.Parcelable
 import com.arkivanov.essenty.parcelable.Parcelize
@@ -29,8 +29,12 @@ class MainRootComponent(componentContext: ComponentContext) : MainRoot,
             is Config.Profile -> MainRoot.Child.Profile(PageProfileComponent(componentContext))
         }
 
+    override fun onHomeClicked() {
+        navigation.bringToFront(Config.Home)
+    }
+
     override fun onProfileClicked() {
-        navigation.push(Config.Profile)
+        navigation.bringToFront(Config.Profile)
     }
 
     @Parcelize

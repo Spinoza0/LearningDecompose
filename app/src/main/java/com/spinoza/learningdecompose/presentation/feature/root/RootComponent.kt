@@ -13,8 +13,6 @@ import com.spinoza.learningdecompose.presentation.feature.task.PageTaskComponent
 
 class RootComponent(
     componentContext: ComponentContext,
-    private val onHomeClick: () -> Unit,
-    private val onProfileClick: () -> Unit,
 ) : Root, ComponentContext by componentContext {
 
     private val navigation = StackNavigation<Config>()
@@ -29,7 +27,7 @@ class RootComponent(
     private fun childFactory(config: Config, componentContext: ComponentContext): Root.Child =
         when (config) {
             is Config.Menu ->
-                Root.Child.Main(PageMainComponent(componentContext, onHomeClick, onProfileClick))
+                Root.Child.Main(PageMainComponent(componentContext, {}, { }))
 
             is Config.Task -> Root.Child.Task(PageTaskComponent(componentContext, config.task))
         }

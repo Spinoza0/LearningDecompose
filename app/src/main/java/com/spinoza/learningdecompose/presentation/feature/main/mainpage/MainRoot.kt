@@ -9,6 +9,8 @@ interface MainRoot {
 
     val stack: Value<ChildStack<*, Child>>
 
+    fun onHomeClicked()
+
     fun onProfileClicked()
 
     sealed class Child {

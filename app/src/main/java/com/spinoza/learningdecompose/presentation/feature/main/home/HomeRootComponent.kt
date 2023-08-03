@@ -27,7 +27,7 @@ class HomeRootComponent(
     private fun childFactory(config: Config, componentContext: ComponentContext): HomeRoot.Child =
         when (config) {
             is Config.Tasks -> HomeRoot.Child.Tasks(
-                PageTasksComponent(componentContext)
+                PageTasksComponent(componentContext, ::onTeamClicked)
             )
 
             is Config.Team -> HomeRoot.Child.Team(

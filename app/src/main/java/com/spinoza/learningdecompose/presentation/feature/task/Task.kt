@@ -6,8 +6,6 @@ interface Task {
 
     val models: Value<Model>
 
-    fun setTask(newTask: String)
-
     data class Model(
         val task: String,
     )

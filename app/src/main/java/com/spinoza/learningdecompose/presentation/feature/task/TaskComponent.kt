@@ -8,8 +8,4 @@ class TaskComponent(task: String) : Task {
 
     private val _models = MutableValue(Model(task))
     override val models: Value<Model> = _models
-
-    override fun setTask(newTask: String) {
-        _models.value = Model(newTask)
-    }
 }

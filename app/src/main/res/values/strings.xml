@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">LearningDecompose</string>
+    <string name="show_team">Show team</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
 </resources>
