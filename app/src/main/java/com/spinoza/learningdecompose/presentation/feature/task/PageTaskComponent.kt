@@ -1,6 +1,11 @@
 package com.spinoza.learningdecompose.presentation.feature.task
 
-class PageTaskComponent : PageTask {
+import com.arkivanov.decompose.ComponentContext
 
-    override val task: Task = TaskComponent()
+class PageTaskComponent(
+    componentContext: ComponentContext,
+    task: String,
+) : PageTask, ComponentContext by componentContext {
+
+    override val task: Task = TaskComponent(task)
 }

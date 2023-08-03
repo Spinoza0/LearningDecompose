@@ -1,9 +1,9 @@
-package com.spinoza.learningdecompose.presentation.feature.menu.profile
+package com.spinoza.learningdecompose.presentation.feature.main.profile
 
 import com.arkivanov.decompose.value.MutableValue
 import com.arkivanov.decompose.value.Value
 import com.spinoza.learningdecompose.domain.model.Person
-import com.spinoza.learningdecompose.presentation.feature.menu.profile.Profile.*
+import com.spinoza.learningdecompose.presentation.feature.main.profile.Profile.*
 
 class ProfileComponent : Profile {
 

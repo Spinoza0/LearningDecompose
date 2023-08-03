@@ -1,4 +1,4 @@
-package com.spinoza.learningdecompose.presentation.feature.menu.home.tasks
+package com.spinoza.learningdecompose.presentation.feature.main.home.tasks
 
 import com.arkivanov.decompose.value.Value
 

@@ -1,8 +1,8 @@
-package com.spinoza.learningdecompose.presentation.feature.menu.home.tasks
+package com.spinoza.learningdecompose.presentation.feature.main.home.tasks
 
 import com.arkivanov.decompose.value.MutableValue
 import com.arkivanov.decompose.value.Value
-import com.spinoza.learningdecompose.presentation.feature.menu.home.tasks.Tasks.Model
+import com.spinoza.learningdecompose.presentation.feature.main.home.tasks.Tasks.Model
 
 class TasksComponent : Tasks {
 

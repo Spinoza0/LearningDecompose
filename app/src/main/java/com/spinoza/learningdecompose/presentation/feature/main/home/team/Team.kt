@@ -1,4 +1,4 @@
-package com.spinoza.learningdecompose.presentation.feature.menu.home.team
+package com.spinoza.learningdecompose.presentation.feature.main.home.team
 
 import com.arkivanov.decompose.value.Value
 import com.spinoza.learningdecompose.domain.model.Person
