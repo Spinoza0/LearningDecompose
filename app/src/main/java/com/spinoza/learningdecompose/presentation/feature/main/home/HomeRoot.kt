@@ -11,6 +11,8 @@ interface HomeRoot {
 
     fun onTeamClicked()
 
+    fun onTaskClicked(task: String)
+
     sealed class Child {
 
         class Tasks(val component: PageTasks) : Child()

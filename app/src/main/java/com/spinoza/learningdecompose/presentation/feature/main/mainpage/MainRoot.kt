@@ -13,6 +13,8 @@ interface MainRoot {
 
     fun onProfileClicked()
 
+    fun onTaskClicked(task: String)
+
     sealed class Child {
 
         class Home(val component: HomeRoot) : Child()

@@ -40,9 +40,9 @@ fun PageTasksUi(component: PageTasks, modifier: Modifier = Modifier) {
             }
         }
         LazyColumn(modifier = modifier) {
-            items(model.tasks, key = { it }) {
-                Text(it, modifier = Modifier
-                    .clickable { }
+            items(model.tasks, key = { it }) { task ->
+                Text(task, modifier = Modifier
+                    .clickable { component.tasks.onTaskClicked(task) }
                     .fillMaxWidth()
                 )
             }

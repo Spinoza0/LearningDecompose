@@ -13,6 +13,7 @@ import kotlinx.parcelize.Parcelize
 
 class HomeRootComponent(
     componentContext: ComponentContext,
+    private val onTaskClick: (String) -> Unit,
 ) : HomeRoot, ComponentContext by componentContext {
 
     private val navigation = StackNavigation<Config>()
@@ -27,7 +28,7 @@ class HomeRootComponent(
     private fun childFactory(config: Config, componentContext: ComponentContext): HomeRoot.Child =
         when (config) {
             is Config.Tasks -> HomeRoot.Child.Tasks(
-                PageTasksComponent(componentContext, ::onTeamClicked)
+                PageTasksComponent(componentContext, ::onTeamClicked, ::onTaskClicked)
             )
 
             is Config.Team -> HomeRoot.Child.Team(
@@ -38,6 +39,10 @@ class HomeRootComponent(
 
     override fun onTeamClicked() {
         navigation.push(Config.Team)
+    }
+
+    override fun onTaskClicked(task: String) {
+        onTaskClick(task)
     }
 
     @Parcelize

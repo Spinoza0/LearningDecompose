@@ -27,7 +27,7 @@ class RootComponent(
     private fun childFactory(config: Config, componentContext: ComponentContext): Root.Child =
         when (config) {
             is Config.Menu ->
-                Root.Child.Main(PageMainComponent(componentContext))
+                Root.Child.Main(PageMainComponent(componentContext, ::onTaskClicked))
 
             is Config.Task -> Root.Child.Task(PageTaskComponent(componentContext, config.task))
         }

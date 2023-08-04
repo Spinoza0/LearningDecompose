@@ -11,7 +11,10 @@ import com.arkivanov.essenty.parcelable.Parcelize
 import com.spinoza.learningdecompose.presentation.feature.main.home.HomeRootComponent
 import com.spinoza.learningdecompose.presentation.feature.main.profile.PageProfileComponent
 
-class MainRootComponent(componentContext: ComponentContext) : MainRoot,
+class MainRootComponent(
+    componentContext: ComponentContext,
+    private val onTaskClick: (String) -> Unit,
+) : MainRoot,
     ComponentContext by componentContext {
 
     private val navigation = StackNavigation<Config>()
@@ -25,7 +28,9 @@ class MainRootComponent(componentContext: ComponentContext) : MainRoot,
 
     private fun childFactory(config: Config, componentContext: ComponentContext): MainRoot.Child =
         when (config) {
-            is Config.Home -> MainRoot.Child.Home(HomeRootComponent(componentContext))
+            is Config.Home ->
+                MainRoot.Child.Home(HomeRootComponent(componentContext, ::onTaskClicked))
+
             is Config.Profile -> MainRoot.Child.Profile(PageProfileComponent(componentContext))
         }
 
@@ -35,6 +40,10 @@ class MainRootComponent(componentContext: ComponentContext) : MainRoot,
 
     override fun onProfileClicked() {
         navigation.bringToFront(Config.Profile)
+    }
+
+    override fun onTaskClicked(task: String) {
+        onTaskClick(task)
     }
 
     @Parcelize
