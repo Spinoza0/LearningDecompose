@@ -1,5 +1,6 @@
 package com.spinoza.learningdecompose.presentation.feature.main.mainpage
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
@@ -8,8 +9,11 @@ import com.spinoza.learningdecompose.presentation.feature.main.mainpage.bottomme
 
 @Composable
 fun PageMainUi(component: PageMain) {
-    Column(modifier = Modifier.fillMaxSize()) {
-        MainRootUi(component.mainRoot, modifier = Modifier.weight(1F))
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.SpaceBetween
+    ) {
+        MainRootUi(component.mainRoot)
         BottomMenuUi(component.bottomMenu)
     }
 }

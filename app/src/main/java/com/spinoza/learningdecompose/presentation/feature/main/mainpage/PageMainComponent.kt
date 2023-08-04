@@ -6,11 +6,10 @@ import com.spinoza.learningdecompose.presentation.feature.main.mainpage.bottomme
 
 class PageMainComponent(
     componentContext: ComponentContext,
-    onHomeClick: () -> Unit,
-    onProfileClick: () -> Unit,
 ) : PageMain, ComponentContext by componentContext {
 
     override val mainRoot: MainRoot = MainRootComponent(componentContext)
 
-    override val bottomMenu: BottomMenu = BottomMenuComponent(onHomeClick, onProfileClick)
+    override val bottomMenu: BottomMenu =
+        BottomMenuComponent(mainRoot::onHomeClicked, mainRoot::onProfileClicked)
 }

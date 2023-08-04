@@ -1,9 +1,9 @@
 package com.spinoza.learningdecompose.presentation.feature.main.home.tasks
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -26,9 +26,7 @@ import com.spinoza.learningdecompose.R
 fun PageTasksUi(component: PageTasks, modifier: Modifier = Modifier) {
     val model by component.tasks.models.subscribeAsState()
     Column(
-        modifier = modifier
-            .fillMaxSize()
-            .padding(8.dp)
+        modifier = modifier.padding(8.dp)
     ) {
         Button(
             onClick = component::onTeamClicked,
@@ -41,9 +39,12 @@ fun PageTasksUi(component: PageTasks, modifier: Modifier = Modifier) {
                 Text(text)
             }
         }
-        LazyColumn(modifier = modifier.fillMaxSize()) {
+        LazyColumn(modifier = modifier) {
             items(model.tasks, key = { it }) {
-                Text(it)
+                Text(it, modifier = Modifier
+                    .clickable { }
+                    .fillMaxWidth()
+                )
             }
         }
     }
