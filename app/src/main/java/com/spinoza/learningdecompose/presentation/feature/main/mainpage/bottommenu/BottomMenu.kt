@@ -1,6 +1,8 @@
 package com.spinoza.learningdecompose.presentation.feature.main.mainpage.bottommenu
 
 import com.arkivanov.decompose.value.Value
+import com.arkivanov.essenty.parcelable.Parcelable
+import com.arkivanov.essenty.parcelable.Parcelize
 
 interface BottomMenu {
 
@@ -10,12 +12,6 @@ interface BottomMenu {
 
     fun onProfileClicked()
 
-    data class Model(val currentItem: BottomMenuItem)
-
-    sealed class BottomMenuItem {
-
-        object Home : BottomMenuItem()
-
-        object Profile : BottomMenuItem()
-    }
+    @Parcelize
+    data class Model(val isHomeScreen: Boolean) : Parcelable
 }

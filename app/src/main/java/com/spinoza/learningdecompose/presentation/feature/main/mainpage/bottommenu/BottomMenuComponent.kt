@@ -4,7 +4,7 @@ import com.arkivanov.decompose.ComponentContext
 import com.arkivanov.decompose.value.MutableValue
 import com.arkivanov.decompose.value.Value
 import com.arkivanov.essenty.backhandler.BackCallback
-import com.spinoza.learningdecompose.presentation.feature.main.mainpage.bottommenu.BottomMenu.BottomMenuItem
+import com.arkivanov.essenty.statekeeper.consume
 import com.spinoza.learningdecompose.presentation.feature.main.mainpage.bottommenu.BottomMenu.Model
 
 class BottomMenuComponent(
@@ -13,29 +13,37 @@ class BottomMenuComponent(
     private val onProfileClick: () -> Unit,
 ) : BottomMenu, ComponentContext by componentContext {
 
-    private val _models = MutableValue(Model(BottomMenuItem.Home))
+    private val _models = MutableValue(
+        stateKeeper.consume<Model>(STATE) ?: Model(true)
+    )
     override val models: Value<Model> = _models
 
     private val backCallback = BackCallback { onHomeClicked() }.also {
         backHandler.register(it)
-        it.isEnabled = false
+        it.isEnabled = !_models.value.isHomeScreen
+    }
+
+    init {
+        stateKeeper.register(STATE) { _models.value }
     }
 
     override fun onHomeClicked() {
-        if (!isOnHomeScreen()) {
-            _models.value = _models.value.copy(currentItem = BottomMenuItem.Home)
+        if (!models.value.isHomeScreen) {
+            _models.value = _models.value.copy(isHomeScreen = true)
             backCallback.isEnabled = false
             onHomeClick()
         }
     }
 
     override fun onProfileClicked() {
-        if (isOnHomeScreen()) {
-            _models.value = _models.value.copy(currentItem = BottomMenuItem.Profile)
+        if (models.value.isHomeScreen) {
+            _models.value = _models.value.copy(isHomeScreen = false)
             backCallback.isEnabled = true
             onProfileClick()
         }
     }
 
-    private fun isOnHomeScreen(): Boolean = _models.value.currentItem is BottomMenuItem.Home
+    private companion object {
+        const val STATE = "state"
+    }
 }

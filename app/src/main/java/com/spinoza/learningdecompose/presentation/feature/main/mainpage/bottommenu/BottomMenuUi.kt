@@ -17,15 +17,15 @@ import com.spinoza.learningdecompose.R
 @Composable
 fun BottomMenuUi(component: BottomMenu, modifier: Modifier = Modifier) {
     val model by component.models.subscribeAsState()
-    NavigationBar(modifier = modifier, ) {
+    NavigationBar(modifier = modifier) {
         NavigationBarItem(
-            selected = model.currentItem is BottomMenu.BottomMenuItem.Home,
+            selected = model.isHomeScreen,
             onClick = component::onHomeClicked,
             icon = { Icon(imageVector = Icons.Default.Home, contentDescription = null) },
             label = { Text(stringResource(R.string.home)) }
         )
         NavigationBarItem(
-            selected = model.currentItem is BottomMenu.BottomMenuItem.Profile,
+            selected = !model.isHomeScreen,
             onClick = component::onProfileClicked,
             icon = { Icon(imageVector = Icons.Default.Person, contentDescription = null) },
             label = { Text(stringResource(R.string.profile)) }
