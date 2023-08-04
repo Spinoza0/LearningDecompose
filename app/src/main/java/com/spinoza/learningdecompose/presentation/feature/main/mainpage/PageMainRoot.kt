@@ -5,7 +5,7 @@ import com.arkivanov.decompose.value.Value
 import com.spinoza.learningdecompose.presentation.feature.main.home.HomeRoot
 import com.spinoza.learningdecompose.presentation.feature.main.profile.PageProfile
 
-interface MainRoot {
+interface PageMainRoot {
 
     val stack: Value<ChildStack<*, Child>>
 

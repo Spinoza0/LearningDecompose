@@ -3,4 +3,5 @@
     <string name="show_team">Show team</string>
     <string name="home">Home</string>
     <string name="profile">Profile</string>
+    <string name="team">Team:</string>
 </resources>

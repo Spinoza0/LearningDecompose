@@ -9,8 +9,11 @@ class PageMainComponent(
     onTaskClick: (String) -> Unit,
 ) : PageMain, ComponentContext by componentContext {
 
-    override val mainRoot: MainRoot = MainRootComponent(componentContext, onTaskClick)
+    override val pageMainRoot: PageMainRoot = PageMainRootComponent(componentContext, onTaskClick)
 
-    override val bottomMenu: BottomMenu =
-        BottomMenuComponent(mainRoot::onHomeClicked, mainRoot::onProfileClicked)
+    override val bottomMenu: BottomMenu = BottomMenuComponent(
+        componentContext,
+        pageMainRoot::onHomeClicked,
+        pageMainRoot::onProfileClicked
+    )
 }

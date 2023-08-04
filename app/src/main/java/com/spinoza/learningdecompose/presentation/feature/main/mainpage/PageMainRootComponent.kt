@@ -11,27 +11,26 @@ import com.arkivanov.essenty.parcelable.Parcelize
 import com.spinoza.learningdecompose.presentation.feature.main.home.HomeRootComponent
 import com.spinoza.learningdecompose.presentation.feature.main.profile.PageProfileComponent
 
-class MainRootComponent(
+class PageMainRootComponent(
     componentContext: ComponentContext,
     private val onTaskClick: (String) -> Unit,
-) : MainRoot,
+) : PageMainRoot,
     ComponentContext by componentContext {
 
     private val navigation = StackNavigation<Config>()
 
-    override val stack: Value<ChildStack<*, MainRoot.Child>> = childStack(
+    override val stack: Value<ChildStack<*, PageMainRoot.Child>> = childStack(
         source = navigation,
         initialConfiguration = Config.Home,
-        handleBackButton = true,
         childFactory = ::childFactory
     )
 
-    private fun childFactory(config: Config, componentContext: ComponentContext): MainRoot.Child =
+    private fun childFactory(config: Config, componentContext: ComponentContext): PageMainRoot.Child =
         when (config) {
             is Config.Home ->
-                MainRoot.Child.Home(HomeRootComponent(componentContext, ::onTaskClicked))
+                PageMainRoot.Child.Home(HomeRootComponent(componentContext, ::onTaskClicked))
 
-            is Config.Profile -> MainRoot.Child.Profile(PageProfileComponent(componentContext))
+            is Config.Profile -> PageMainRoot.Child.Profile(PageProfileComponent(componentContext))
         }
 
     override fun onHomeClicked() {

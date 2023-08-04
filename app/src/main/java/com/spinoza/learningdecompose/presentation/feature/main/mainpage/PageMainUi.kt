@@ -13,7 +13,7 @@ fun PageMainUi(component: PageMain) {
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.SpaceBetween
     ) {
-        MainRootUi(component.mainRoot)
+        PageMainRootUi(component.pageMainRoot)
         BottomMenuUi(component.bottomMenu)
     }
 }

@@ -4,6 +4,6 @@ import com.spinoza.learningdecompose.presentation.feature.main.mainpage.bottomme
 
 interface PageMain {
 
-    val mainRoot: MainRoot
+    val pageMainRoot: PageMainRoot
     val bottomMenu: BottomMenu
 }

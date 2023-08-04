@@ -3,8 +3,8 @@ package com.spinoza.learningdecompose.presentation.feature.main.home
 import com.arkivanov.decompose.ComponentContext
 import com.arkivanov.decompose.router.stack.ChildStack
 import com.arkivanov.decompose.router.stack.StackNavigation
+import com.arkivanov.decompose.router.stack.bringToFront
 import com.arkivanov.decompose.router.stack.childStack
-import com.arkivanov.decompose.router.stack.push
 import com.arkivanov.decompose.value.Value
 import com.arkivanov.essenty.parcelable.Parcelable
 import com.spinoza.learningdecompose.presentation.feature.main.home.tasks.PageTasksComponent
@@ -21,7 +21,6 @@ class HomeRootComponent(
     override val stack: Value<ChildStack<*, HomeRoot.Child>> = childStack(
         source = navigation,
         initialConfiguration = Config.Tasks,
-        handleBackButton = true,
         childFactory = ::childFactory,
     )
 
@@ -32,17 +31,21 @@ class HomeRootComponent(
             )
 
             is Config.Team -> HomeRoot.Child.Team(
-                PageTeamComponent(componentContext)
+                PageTeamComponent(componentContext, ::showTasks)
             )
         }
 
 
     override fun onTeamClicked() {
-        navigation.push(Config.Team)
+        navigation.bringToFront(Config.Team)
     }
 
     override fun onTaskClicked(task: String) {
         onTaskClick(task)
+    }
+
+    private fun showTasks() {
+        navigation.bringToFront(Config.Tasks)
     }
 
     @Parcelize
