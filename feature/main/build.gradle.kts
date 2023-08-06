@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.spinoza.feature.main"
+    namespace = "com.spinoza.learningdecompose.main"
     compileSdk = Versions.compileSdk
 
     defaultConfig {

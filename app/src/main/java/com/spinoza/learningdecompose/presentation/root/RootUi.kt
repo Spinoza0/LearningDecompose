@@ -7,8 +7,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.arkivanov.decompose.extensions.compose.jetpack.stack.Children
-import com.spinoza.main.presentation.mainpage.PageMainUi
-import com.spinoza.task.presentation.PageTaskUi
+import com.spinoza.learningdecompose.main.presentation.mainpage.PageMainUi
+import com.spinoza.learningdecompose.task.presentation.PageTaskUi
 
 @Composable
 fun RootUi(component: Root) {

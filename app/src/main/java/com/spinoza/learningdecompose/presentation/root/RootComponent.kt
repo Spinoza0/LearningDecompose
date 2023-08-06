@@ -8,8 +8,8 @@ import com.arkivanov.decompose.router.stack.push
 import com.arkivanov.decompose.value.Value
 import com.arkivanov.essenty.parcelable.Parcelable
 import com.arkivanov.essenty.parcelable.Parcelize
-import com.spinoza.main.presentation.mainpage.PageMainComponent
-import com.spinoza.task.presentation.PageTaskComponent
+import com.spinoza.learningdecompose.main.presentation.mainpage.PageMainComponent
+import com.spinoza.learningdecompose.task.presentation.PageTaskComponent
 
 class RootComponent(
     componentContext: ComponentContext,

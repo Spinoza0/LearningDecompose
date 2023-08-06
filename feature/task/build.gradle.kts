@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.spinoza.feature.task"
+    namespace = "com.spinoza.learningdecompose.task"
     compileSdk = Versions.compileSdk
 
     defaultConfig {
