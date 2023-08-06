@@ -1,0 +1,34 @@
+package com.spinoza.main.presentation.mainpage.bottommenu
+
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Person
+import androidx.compose.material3.Icon
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import com.arkivanov.decompose.extensions.compose.jetpack.subscribeAsState
+import com.spinoza.feature.main.R
+
+@Composable
+fun BottomMenuUi(component: BottomMenu, modifier: Modifier = Modifier) {
+    val model by component.models.subscribeAsState()
+    NavigationBar(modifier = modifier) {
+        NavigationBarItem(
+            selected = model.isHomeScreen,
+            onClick = component::onHomeClicked,
+            icon = { Icon(imageVector = Icons.Default.Home, contentDescription = null) },
+            label = { Text(stringResource(R.string.home)) }
+        )
+        NavigationBarItem(
+            selected = !model.isHomeScreen,
+            onClick = component::onProfileClicked,
+            icon = { Icon(imageVector = Icons.Default.Person, contentDescription = null) },
+            label = { Text(stringResource(R.string.profile)) }
+        )
+    }
+}

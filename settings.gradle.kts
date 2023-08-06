@@ -18,5 +18,5 @@ dependencyResolutionManagement {
 rootProject.name = "LearningDecompose"
 include(":app")
 include(":core")
-include(":feature-main")
-include(":feature-task")
+include(":feature:main")
+include(":feature:task")

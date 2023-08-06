@@ -52,9 +52,6 @@ android {
 
 dependencies {
     implementation(project(":core"))
-    implementation(project(":feature-main"))
-    implementation(project(":feature-task"))
-
-    debugImplementation("androidx.compose.ui:ui-tooling")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
+    implementation(project(":feature:main"))
+    implementation(project(":feature:task"))
 }
