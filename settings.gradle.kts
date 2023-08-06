@@ -5,6 +5,8 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
+@Suppress("UnstableApiUsage")
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
@@ -15,4 +17,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "LearningDecompose"
 include(":app")
- 
+include(":core")
+include(":feature-main")
+include(":feature-task")
