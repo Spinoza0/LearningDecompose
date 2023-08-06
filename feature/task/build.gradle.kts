@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.spinoza.featuretask"
+    namespace = "com.spinoza.feature.task"
     compileSdk = Versions.compileSdk
 
     defaultConfig {

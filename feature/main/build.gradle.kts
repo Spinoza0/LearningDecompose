@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.spinoza.featuremain"
+    namespace = "com.spinoza.feature.main"
     compileSdk = Versions.compileSdk
 
     defaultConfig {
