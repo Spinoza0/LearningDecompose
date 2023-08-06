@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -22,6 +23,12 @@ android {
                 "proguard-rules.pro"
             )
         }
+    }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Versions.kotlinCompilerExtensionVersion
     }
     compileOptions {
         sourceCompatibility = Versions.sourceCompatibility

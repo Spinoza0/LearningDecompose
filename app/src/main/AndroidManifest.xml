@@ -13,9 +13,8 @@
         android:theme="@style/Theme.LearningDecompose"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.feature.app.MainActivity"
+            android:name=".presentation.app.MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.LearningDecompose">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

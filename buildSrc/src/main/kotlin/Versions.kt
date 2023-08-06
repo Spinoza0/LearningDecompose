@@ -1,7 +1,7 @@
 import org.gradle.api.JavaVersion
 
 object Versions {
-    val compileSdk = 34
+    val compileSdk = 33
     val minSdk = 24
     val targetSdk = 34
 
@@ -11,4 +11,6 @@ object Versions {
     val sourceCompatibility = JavaVersion.VERSION_19
     val targetCompatibility = JavaVersion.VERSION_19
     val jvmTarget = "19"
+
+    val kotlinCompilerExtensionVersion = "1.4.3"
 }
