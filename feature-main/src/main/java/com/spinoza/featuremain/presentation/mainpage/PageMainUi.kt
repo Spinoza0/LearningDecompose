@@ -8,9 +8,9 @@ import androidx.compose.ui.Modifier
 import com.spinoza.featuremain.presentation.mainpage.bottommenu.BottomMenuUi
 
 @Composable
-fun PageMainUi(component: PageMain) {
+fun PageMainUi(component: PageMain, modifier: Modifier = Modifier) {
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier = modifier.fillMaxSize(),
         verticalArrangement = Arrangement.SpaceBetween
     ) {
         PageMainRootUi(component.pageMainRoot)
