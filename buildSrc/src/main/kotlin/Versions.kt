@@ -5,8 +5,8 @@ object Versions {
     const val minSdk = 24
     const val targetSdk = 34
 
-    const val kotlin = "1.9.0"
-    const val androidGradlePlugin = "8.2.0-beta04"
+    const val kotlin = "1.9.20"
+    const val androidGradlePlugin = "8.1.4"
 
     const val versionCode = 1
     const val versionName = "1.0"
@@ -15,5 +15,5 @@ object Versions {
     val targetCompatibility = JavaVersion.VERSION_19
     const val jvmTarget = "19"
 
-    const val kotlinCompilerExtensionVersion = "1.5.1"
+    const val kotlinCompilerExtensionVersion = "1.5.4"
 }
